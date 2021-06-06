@@ -6,30 +6,44 @@
 }
 html {
   background-color: aliceblue;
-  height: 100%;
 }
 body {
+  width: 100vw;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: auto;
   background: linear-gradient(
     45deg,
     red 0%,
-    red 15%,
+    red 14.9%,
     orange 15%,
-    orange 29%,
+    orange 28.9%,
     yellow 29%,
-    yellow 43%,
+    yellow 42.9%,
     green 43%,
-    green 57%,
+    green 56.9%,
     cyan 57%,
-    cyan 71%,
+    cyan 70.9%,
     blue 71%,
-    blue 85%,
-    violet 85%,
-    violet 100%
+    blue 84.9%,
+    rgb(199, 0, 199) 85%,
+    rgb(199, 0, 199) 100%
   );
+}
+#appContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  color: white;
+}
+@media (min-width: 500px) {
+  #appContainer {
+    color: black;
+    background: rgba(255, 255, 255, 0.836);
+  }
 }
 
 /*HEADER*********************************************************/
@@ -37,11 +51,12 @@ h1 {
   font-family: "Lobster", cursive;
   font-weight: 400;
   margin: 1rem 0;
+  text-shadow: 4px 3px 7px rgba(0, 0, 0, 0.3);
 }
 
 /*ASPECT RATIO IMAGE CONTAINER***********************************/
 #aspectRatioContainer {
-  width: 100vw;
+  width: 100%;
   background-color: white;
 }
 #squareBox {
@@ -70,18 +85,23 @@ img {
 }
 
 /*TIMER**********************************************************/
+#timerFlex {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 #timerContainer {
-  background-color: black;
-  color: white;
   width: 50%;
   margin: 2rem;
   text-align: center;
-  padding: 1rem 0.4rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   border-radius: 0.4rem;
   font-family: "Oswald", sans-serif;
+  text-shadow: 4px 3px 7px rgba(0, 0, 0, 0.6);
 }
 #timer {
-  font-size: 1.7rem;
+  font-size: 2.2rem;
   margin-top: 0.7rem;
 }

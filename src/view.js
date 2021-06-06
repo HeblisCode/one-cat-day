@@ -8,19 +8,25 @@ const view = (function () {
   }
 
   function _getCurrentGIF() {
-    const url = localStorage.getItem("currentGIFCatApp");
-    console.log(url);
-    return url ? url : "#";
+    return localStorage.getItem("currentGIFCatApp");
   }
 
   function updateGIF(url) {
     _setCurrentGIF(url);
     _imgElement.src = url;
   }
-  updateGIF(_currentGIF);
+
+  function restoreGIF() {
+    updateGIF(_currentGIF);
+    if (!_currentGIF) {
+      return false;
+    }
+    return true;
+  }
 
   return {
     updateGIF,
+    restoreGIF,
   };
 })();
 

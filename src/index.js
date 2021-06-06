@@ -11,6 +11,11 @@ const controller = (function () {
 
   function _getLastUpdateTime() {
     const date = localStorage.getItem("lastUpdateCatApp");
+    if (!date) {
+      const newDate = new Date();
+      _setLastUpdateTime(newDate);
+      return newDate;
+    }
     return new Date(date);
   }
 
@@ -45,8 +50,9 @@ const controller = (function () {
   }
 
   function init() {
+    const isRestored = view.restoreGIF();
     const timePassed = getUnixTime(new Date()) - getUnixTime(_lastUpdateTime); //time passed from last update in second
-    if (timePassed > DAY_IN_SECONDS) {
+    if (timePassed > DAY_IN_SECONDS || !isRestored) {
       _setNewGIF(); //set a new GIF if more than one day has passed
     } else {
       _createTimer(); //restores the timer
