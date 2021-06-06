@@ -1,12 +1,15 @@
 import "./index.css";
 import getGIF from "./getGIF";
+import view from "./view";
 
-const image = document.querySelector("#gifImage");
+// const controller = (function(){
+//   const _lastUpdateTime = getLastUpdateTime()
 
-function printImage(src) {
-  image.src = src;
-}
+//   function getLastUpdateTime(){
+//     const date = localStorage.getItem("lastUpdateCatApp");
 
-const button = document.querySelector("#test");
-getGIF.getURL().then((url) => printImage(url));
-console.log(getGIF.getArrayafgad());
+//   }
+//   function setLastUpdateTime(params) {
+//   }
+// })()
+//getGIF.getURL().then((url) => view.updateGIF(url));
