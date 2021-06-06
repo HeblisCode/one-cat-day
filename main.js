@@ -66,7 +66,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var _getGIF__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getGIF */ \"./src/getGIF.js\");\n\n\n\nconst image = document.querySelector(\"#gifImage\");\n\nfunction printImage(src) {\n  image.src = src;\n}\n\nconst button = document.querySelector(\"#test\");\n_getGIF__WEBPACK_IMPORTED_MODULE_1__.default.getURL().then((url) => printImage(url));\nconsole.log(_getGIF__WEBPACK_IMPORTED_MODULE_1__.default.getArrayafgad());\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var _getGIF__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getGIF */ \"./src/getGIF.js\");\n/* harmony import */ var _view__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./view */ \"./src/view.js\");\n\n\n\n\n//getGIF.getURL().then((url) => view.updateGIF(url));\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/view.js":
+/*!*********************!*\
+  !*** ./src/view.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst view = (function () {\n  let _currentGIF = _getCurrentGIF();\n  const _imgElement = document.querySelector(\"#gifImage\");\n  const _paragraph = document.querySelector(\"#timer\");\n\n  function _setCurrentGIF(url) {\n    localStorage.setItem(\"currentGIFCatApp\", url);\n    _currentGIF = url;\n  }\n\n  function _getCurrentGIF() {\n    const url = localStorage.getItem(\"currentGIFCatApp\");\n    console.log(url);\n    return url ? url : \"#\";\n  }\n\n  function updateGIF(url) {\n    _setCurrentGIF(url);\n    _imgElement.src = url;\n  }\n  updateGIF(_currentGIF);\n\n  return {\n    updateGIF,\n  };\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (view);\n\n\n//# sourceURL=webpack:///./src/view.js?");
 
 /***/ })
 
