@@ -1,7 +1,6 @@
 const view = (function () {
   let _currentGIF = _getCurrentGIF();
   const _imgElement = document.querySelector("#gifImage");
-  const _paragraph = document.querySelector("#timer");
 
   function _setCurrentGIF(url) {
     localStorage.setItem("currentGIFCatApp", url);
