@@ -1,7 +1,7 @@
 import "./index.css";
 import getGIF from "./getGIF";
 import view from "./view";
-import { getUnixTime, fromUnixTime } from "date-fns";
+import { getUnixTime } from "date-fns";
 import Timer from "easytimer.js";
 
 const controller = (function () {
